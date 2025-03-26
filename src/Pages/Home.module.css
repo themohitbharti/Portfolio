@@ -97,6 +97,13 @@
     }
 }
 
+@media screen and (max-width:1400px){
+    .home_wrapper .home_image img{
+        width: 80%;
+        height: 80%;
+    }
+}
+
 
 
 /* .container{
