@@ -82,7 +82,8 @@ nav .navBtns i:hover{
         top: 100%;
         left: -100%;
         width: 100%;
-
+        z-index: 999;
+        background-color: black;
         transition: 0.6s;
     }
 

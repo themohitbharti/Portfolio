@@ -1,4 +1,10 @@
 
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
 
 .home_wrapper{
     padding: 0 12%;
@@ -104,9 +110,193 @@
     }
 }
 
+@media screen and (max-width:1200px){
+    .home_wrapper{
+        min-height: 95vh;
+    }
+
+    .home_wrapper .home_content h2{
+        font-size: 100px;
+        line-height: 110px;
+    }
+
+    .home_wrapper .home_image span{
+        width: 480px;
+        height: 480px;
+    }
+}
+
+@media screen and (max-width:900px){
+    .home_wrapper{
+        flex-direction: column;
+    }
+
+    .home_wrapper .home_content{
+        width: 100%;
+        margin-top: 80px;
+    }
+
+    .home_wrapper .home_image{
+        width: 100%;
+        margin-top: 80px;
+    }
+
+    .home_wrapper .home_image span{
+        height: 640px;
+        width: 640px;
+    }
+}
+
+@media screen and (max-width:768px){
+
+    .home_wrapper .home_image span{
+        display: none;
+    }
+
+    .home_wrapper .home_image image{
+        width: 100%;
+        height: 100%;
+    }
+}
 
 
-/* .container{
-    max-width: 1460px;
-    margin: 0 auto;
-} */
+
+.portfolioText{
+    font-size: 45px;
+    text-align: center;
+    padding: 50px 12%;
+    font-weight: 800;
+    background-color: #1e1e1e;
+}
+
+.portfolioText span{
+    font-weight: 900;
+    color: var(--primary-color);
+}
+
+@media screen and (max-width:900px){
+    .portfolioText{
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width:500px){
+    .portfolioText{
+        font-size: 20px;
+    }
+}
+
+.about_wrapper{
+    padding: 50px 12%;
+    display: flex;
+    gap: 80px;
+    width: 100%;
+    background-color: #1e1e1e;
+}
+
+.about_wrapper .experience_cards{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    position: relative;
+}
+
+.about_wrapper .experience_cards::after{
+    position: absolute;
+    content: '';
+    height: 350px;
+    width: 350px;
+    top: 50%;
+    left: 50%;
+    background-color: var(--primary-color);
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.about_wrapper .experience_cards .card{
+    width: 100%;
+    height: 350px;
+    border: 1px solid rgba(131, 131, 131, 0.3);
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    backdrop-filter: blur(15px);
+    border-radius: 12px;
+}
+
+.about_wrapper .experience_cards .card h2{
+     font-size: 105px;
+     font-weight: 700;
+}
+
+.about_wrapper .experience_cards .card h3{
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.about_wrapper .experience_cards .card i{
+    font-size: 38px;
+}
+
+.about_wrapper .experience_cards .card:last-of-type{
+    height: 150px;
+    align-items: flex-start;
+}
+
+
+.about_wrapper .about_content{
+    width: 70%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.about_wrapper .about_content small{
+    font-size: 18px;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.about_wrapper .about_content h2{
+    font-size: 60px;
+    font-weight: 700;
+    width: 80%;
+}
+
+.about_wrapper .about_content .about_cards{
+    display: flex;
+    gap: 25px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.about_wrapper .about_content .about_cards .about_card{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.about_wrapper .about_content .about_cards .about_card div{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.about_wrapper .about_content .about_cards .about_card div i{
+    font-size: 40px;
+    color: var(--primary-color);
+}
+
+.about_wrapper .about_content .about_cards .about_card div h3{
+    font-size: 25px;
+}
