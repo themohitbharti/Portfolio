@@ -1,6 +1,12 @@
 import React from "react";
 import homcss from "./Home.module.css";
 import heroImage from "../assets/new_profile.jpg";
+import portfolioImg01 from '../assets/tab-image-1.png'
+import portfolioImg02 from '../assets/tab-image-2.png'
+import portfolioImg03 from '../assets/tab-image-3.png'
+import portfolioImg04 from '../assets/tab-image-4.png'
+import portfolioImg05 from '../assets/tab-image-5.png'
+import portfolioImg06 from '../assets/tab-image-6.png'
 
 export default function Home() {
   return (
@@ -76,6 +82,67 @@ export default function Home() {
                         <i className="ri-arrow-right-line"></i>
                 </button>
             </div>
+      </div>
+
+      <div className={homcss.portfolio_wrapper}>
+        <small>Latest Portfolio</small>
+        <h2>Transforming Ideas into Exceptional</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit nemo fugiat vero in repellat aspernatur earum ipsam placeat enim expedita.</p>
+        <div className={homcss.portfolio_cards}>
+            <div className={homcss.portfolio_card}>
+                <img src={portfolioImg01} alt="portfolioImg1" />
+
+                <div className={homcss.portfolio_content}>
+                    <p>Development</p>
+                    <h3>A Portfolio of Innovation</h3>
+                </div>
+            </div>
+
+            <div className={homcss.portfolio_card}>
+                <img src={portfolioImg02} alt="portfolioImg2" />
+
+                <div className={homcss.portfolio_content}>
+                    <p>Development</p>
+                    <h3>A Portfolio of Creation</h3>
+                </div>
+            </div>
+
+            <div className={homcss.portfolio_card}>
+                <img src={portfolioImg03} alt="portfolioImg3" />
+
+                <div className={homcss.portfolio_content}>
+                    <p>Development</p>
+                    <h3>A Story of Innovation</h3>
+                </div>
+            </div>
+
+            <div className={homcss.portfolio_card}>
+                <img src={portfolioImg04} alt="portfolioImg4" />
+
+                <div className={homcss.portfolio_content}>
+                    <p>Development</p>
+                    <h3>A Story of Creation</h3>
+                </div>
+            </div>
+
+            <div className={homcss.portfolio_card}>
+                <img src={portfolioImg05} alt="portfolioImg5" />
+
+                <div className={homcss.portfolio_content}>
+                    <p>Development</p>
+                    <h3>A Showcase of my Portfolio</h3>
+                </div>
+            </div>
+
+            <div className={homcss.portfolio_card}>
+                <img src={portfolioImg06} alt="portfolioImg6" />
+
+                <div className={homcss.portfolio_content}>
+                    <p>Development</p>
+                    <h3>A work of Exceptional</h3>
+                </div>
+            </div>
+        </div>
       </div>
     </div>
   );
