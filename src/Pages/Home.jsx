@@ -9,6 +9,10 @@ import portfolioImg05 from "../assets/tab-image-5.png";
 import portfolioImg06 from "../assets/tab-image-6.png";
 import testimonialImg01 from "../assets/rev1.png"
 import testimonialImg02 from "../assets/client-img-1.jpg"
+import galleryImg01 from '../assets/gallery-image-01.jpg'
+import galleryImg02 from '../assets/gallery-image-02.jpg'
+import galleryImg03 from '../assets/gallery-image-03.jpg'
+import galleryImg04 from '../assets/gallery-image-04.jpg'
 import {Swiper ,SwiperSlide} from "swiper/react";
 import 'swiper/css';
 import {Autoplay} from 'swiper/modules'
@@ -271,6 +275,65 @@ export default function Home() {
             </div>
 
 
+      </div>
+
+      <div className={homcss.gallery_wrapper}>
+        <small>My Projects</small>
+        <h2>Transforming Ideas into Exceptionals</h2>
+
+        <div className={homcss.gallery_cards}>
+            <div className={homcss.gallery_card}>
+                <img src={galleryImg01} alt="galleryImg01" />
+
+                <div className={homcss.gallery_content}>
+                    <h3>BidSpace</h3>
+                    <div>
+                        <span>Node.js</span>
+                        <span>TypeScript</span>
+                    </div>
+                    <button>View Project <i className="ri-arrow-right-line"></i></button>
+                </div>
+            </div>
+
+            <div className={homcss.gallery_card}>
+                <img src={galleryImg02} alt="galleryImg02" />
+
+                <div className={homcss.gallery_content}>
+                    <h3>BlogVault</h3>
+                    <div>
+                        <span>React</span>
+                        <span>Appwrite</span>
+                    </div>
+                    <button>View Project <i className="ri-arrow-right-line"></i></button>
+                </div>
+            </div>
+
+            <div className={homcss.gallery_card}>
+                <img src={galleryImg03} alt="galleryImg03" />
+
+                <div className={homcss.gallery_content}>
+                    <h3>Hive</h3>
+                    <div>
+                        <span>Node.js</span>
+                        <span>Flutter</span>
+                    </div>
+                    <button>View Project <i className="ri-arrow-right-line"></i></button>
+                </div>
+            </div>
+
+            <div className={homcss.gallery_card}>
+                <img src={galleryImg04} alt="galleryImg04" />
+
+                <div className={homcss.gallery_content}>
+                    <h3>StockPilot</h3>
+                    <div>
+                        <span>Node.js</span>
+                        <span>Postgres</span>
+                    </div>
+                    <button>View Project <i className="ri-arrow-right-line"></i></button>
+                </div>
+            </div>
+        </div>
       </div>
     </div>
   );
