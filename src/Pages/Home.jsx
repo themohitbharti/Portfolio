@@ -7,6 +7,11 @@ import portfolioImg03 from "../assets/tab-image-3.png";
 import portfolioImg04 from "../assets/tab-image-4.png";
 import portfolioImg05 from "../assets/tab-image-5.png";
 import portfolioImg06 from "../assets/tab-image-6.png";
+import testimonialImg01 from "../assets/rev1.png"
+import testimonialImg02 from "../assets/client-img-1.jpg"
+import {Swiper ,SwiperSlide} from "swiper/react";
+import 'swiper/css';
+import {Autoplay} from 'swiper/modules'
 
 export default function Home() {
   return (
@@ -189,6 +194,83 @@ export default function Home() {
             <span>90%</span>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut animi quos perspiciatis aut?</p>
         </div>
+      </div>
+
+      <div className={homcss.testimonials_wrapper}>
+            <small>What are my Experiences</small>
+            <h2>Brigning dreams to life</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non, impedit eos quaerat necessitatibus in rerum.</p>
+
+            <div className={homcss.swiper_wrapper}>
+            <Swiper
+            slidesPerView={3}
+            spaceBetween={30}
+            loop={true} 
+            autoplay={{
+                delay:2500,
+            }}
+            modules={[Autoplay]}
+
+            breakpoints={{
+                0:{
+                    slidesPerView:1,
+                },
+                768:{
+                    slidesPerView:2,
+                },
+                1200:{
+                    slidesPerView:3,
+                },
+                
+            }}
+            >
+                <SwiperSlide>
+                    <div className={homcss.testimonials_card}>
+                        <div className={homcss.profile_testimonial}>
+                            <img src={testimonialImg01} alt="testimonialImg01" />
+                            <h3>GoComet <span>Backend Developer</span></h3>
+                        </div>
+
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut ab quaerat sed expedita nemo numquam nam autem perspiciatis dicta deserunt cumque exercitationem delectus, sequi vero nesciunt eveniet illum! Dicta, rerum.</p>
+                    </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                    <div className={homcss.testimonials_card}>
+                        <div className={homcss.profile_testimonial}>
+                            <img src={testimonialImg02} alt="testimonialImg02" />
+                            <h3>Programming Club <span>Head</span></h3>
+                        </div>
+
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut ab quaerat sed expedita nemo numquam nam autem perspiciatis dicta deserunt cumque exercitationem delectus, sequi vero nesciunt eveniet illum! Dicta, rerum.</p>
+                    </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                    <div className={homcss.testimonials_card}>
+                        <div className={homcss.profile_testimonial}>
+                            <img src={testimonialImg01} alt="testimonialImg01" />
+                            <h3>GoComet <span>Backend Developer</span></h3>
+                        </div>
+
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut ab quaerat sed expedita nemo numquam nam autem perspiciatis dicta deserunt cumque exercitationem delectus, sequi vero nesciunt eveniet illum! Dicta, rerum.</p>
+                    </div>
+                </SwiperSlide>
+
+                <SwiperSlide>
+                    <div className={homcss.testimonials_card}>
+                        <div className={homcss.profile_testimonial}>
+                            <img src={testimonialImg02} alt="testimonialImg02" />
+                            <h3>Programming Club <span>Head</span></h3>
+                        </div>
+
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut ab quaerat sed expedita nemo numquam nam autem perspiciatis dicta deserunt cumque exercitationem delectus, sequi vero nesciunt eveniet illum! Dicta, rerum.</p>
+                    </div>
+                </SwiperSlide>
+            </Swiper>
+            </div>
+
+
       </div>
     </div>
   );
