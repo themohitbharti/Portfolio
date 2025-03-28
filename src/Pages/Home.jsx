@@ -372,6 +372,38 @@ export default function Home() {
             <button>Appointment Now <i className="ri-arrow-right-line"></i></button>
         </div>
       </div>
+
+      <div className={homcss.footer_wrapper}>
+        <div className={homcss.footer_links}>
+            <div className={homcss.logo}>
+                <span>Mohit</span>
+            </div>
+            <p>Lorem, ipsum dolor  necessitatibus eius atque tenetur?</p>
+            <div className={homcss.socials}>
+                <i className="ri-facebook-line"></i>
+                <i className="ri-instagram-line"></i>
+                <i className="ri-twitter-x-line"></i>
+                <i className="ri-youtube-line"></i>
+            </div>
+        </div>
+        <div className={homcss.footer_links}>
+            <h3>Quick Links</h3>
+
+            <p><a href="#">About Me</a></p>
+            <p><a href="#">Service</a></p>
+            <p><a href="#">Contact Me</a></p>
+            <p><a href="#">blog post</a></p>
+            <p><a href="#">pricing</a></p>
+        </div>
+
+        <div className={homcss.footer_links}>
+            <h3>Contact</h3>
+
+            <p><i className="ri-phone-line"></i>+91 9520608608</p>
+            <p><i className="ri-map-pin-line"></i>Deoband,Saharanpur,UP</p>
+            <p><i className="ri-mail-line"></i>mohitbharti373@gmail.com</p>
+        </div>
+      </div>
     </div>
   );
 }
