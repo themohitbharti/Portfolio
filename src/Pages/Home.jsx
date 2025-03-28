@@ -335,6 +335,43 @@ export default function Home() {
             </div>
         </div>
       </div>
+
+      <div className={homcss.contact_wrapper}>
+        <div className={homcss.contact_content}>
+            <h2>Get ready to Create Great</h2>
+
+            <div className={homcss.details}>
+                <div className={homcss.contact_info}>
+                    <i className="ri-mail-line"></i>
+                    <p>E-mail <span>mohitbharti373@gmail.com</span></p>
+                </div>
+                <div className={homcss.contact_info}>
+                    <i className="ri-map-pin-line"></i>
+                    <p>City <span>Deoband,Saharanpur,UP</span></p>
+                </div>
+                <div className={homcss.contact_info}>
+                    <i className="ri-phone-line"></i>
+                    <p>Contact <span>+91 9520608608</span></p>
+                </div>
+            </div>
+        </div>
+        <div className={homcss.contact_form}>
+            <h2>Get in Touch</h2>
+
+            <div className={homcss.input_wrapper}>
+                <input type="text" placeholder="Your Name"/>
+                <input type="text" placeholder="Your Phone"/>
+            </div>
+            <div className={homcss.input_wrapper}>
+                <input type="text" placeholder="Your Email"/>
+                <input type="text" placeholder="Subject"/>
+            </div>
+
+            <textarea placeholder="Message :"></textarea>
+
+            <button>Appointment Now <i className="ri-arrow-right-line"></i></button>
+        </div>
+      </div>
     </div>
   );
 }
