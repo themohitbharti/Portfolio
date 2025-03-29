@@ -307,8 +307,10 @@
 }
 
 .about_wrapper .about_content .about_cards{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    /* display: grid;
+    grid-template-columns: repeat(2, 1fr); */
+    display: flex;
+    /* flex-direction: column; */
     gap: 25px;
     width: 100%;
     margin-bottom: 30px;
@@ -355,7 +357,7 @@
 }
 
 .about_wrapper .about_content .about_cards {
-    grid-template-columns: repeat(2, 1fr);
+    flex-direction: row;
 }
 
 .githubButton {
@@ -371,7 +373,7 @@
     transition: all 0.3s;
     border: 1px solid var(--primary-color);
     width: fit-content;
-    margin-top: 15px;
+    margin-top: 60px;
   }
   
   .githubButton:hover {
@@ -386,7 +388,7 @@
 @media screen and (max-width:768px){
 
     .about_wrapper .about_content .about_card{
-        grid-template-columns: 1fr;
+        flex-direction: column;
     }
 
     .about_wrapper .about_content h2{
@@ -401,6 +403,10 @@
 }
 
 @media screen and (max-width:500px){
+
+    .about_wrapper .about_content .about_cards{
+        flex-direction: column;
+    }
 
     .about_wrapper .experience_cards{
         width: 100%;

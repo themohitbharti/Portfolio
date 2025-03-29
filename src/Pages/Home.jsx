@@ -92,7 +92,7 @@ export default function Home() {
           <h2>Full-Stack Development & Problem Solving</h2>
 
           <div className={homcss.about_cards}>
-            <div className={homcss.about_card}>
+            {/* <div className={homcss.about_card}>
               <div>
                 <i className="ri-instance-line"></i>
                 <h3>Backend Development</h3>
@@ -101,16 +101,16 @@ export default function Home() {
                 Scalable server-side solutions with Node.js, databases, and
                 APIs. Focus on performance, security, and clean architecture.
               </p>
-            </div>
+            </div> */}
 
             <div className={homcss.about_card}>
               <div>
                 <i className="ri-trophy-line"></i>
-                <h3>Frontend Development</h3>
+                <h3>Full-Stack Development</h3>
               </div>
               <p>
-                Interactive UIs with React.js, responsive designs, and state
-                management. Bridging aesthetics with functionality.
+                Full-stack systems with React.js frontends and Node.js backends.
+                Unifying interfaces with robust APIs.
               </p>
             </div>
 
