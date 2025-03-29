@@ -146,3 +146,9 @@ nav ul li.navItem a {
         padding-left: 12%;
       }
 }
+
+@media screen and (max-width:475px) {
+    nav .navBtns .social{
+        display: none;
+    }
+}

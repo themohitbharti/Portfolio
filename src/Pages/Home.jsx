@@ -200,16 +200,15 @@ export default function Home() {
         <small>My Coding Profiles</small>
         <h2>Competitive Programming & Problem Solving</h2>
 
-        <div className={homcss.expertise_card}>
-          <div className={homcss.expertise_card_title}>
-            <i className="ri-code-s-slash-line"></i>
-            <a
+        <a
               href="https://leetcode.com/themohitbharti"
               target="_blank"
               rel="noopener noreferrer"
             >
+        <div className={homcss.expertise_card}>
+          <div className={homcss.expertise_card_title}>
+            <i className="ri-code-s-slash-line"></i>
               <h3>LeetCode</h3>
-            </a>
           </div>
 
           <span>1506 Rating</span>
@@ -218,17 +217,17 @@ export default function Home() {
             Algorithms.
           </p>
         </div>
+        </a>
 
-        <div className={homcss.expertise_card}>
-          <div className={homcss.expertise_card_title}>
-            <i className="ri-medal-line"></i>
-            <a
+        <a
               href="https://www.codechef.com/users/themohitbharti"
               target="_blank"
               rel="noopener noreferrer"
             >
+        <div className={homcss.expertise_card}>
+          <div className={homcss.expertise_card_title}>
+            <i className="ri-medal-line"></i>
               <h3>CodeChef</h3>
-            </a>
           </div>
 
           <span>1634 Rating</span>
@@ -237,17 +236,17 @@ export default function Home() {
             solved.
           </p>
         </div>
+        </a>
 
-        <div className={homcss.expertise_card}>
-          <div className={homcss.expertise_card_title}>
-            <i className="ri-cpu-line"></i>
-            <a
+        <a
               href="https://codeforces.com/profile/themohitbharti"
               target="_blank"
               rel="noopener noreferrer"
             >
+        <div className={homcss.expertise_card}>
+          <div className={homcss.expertise_card_title}>
+            <i className="ri-cpu-line"></i>
               <h3>CodeForces</h3>
-            </a>
           </div>
 
           <span>1158 Rating</span>
@@ -255,6 +254,7 @@ export default function Home() {
             Solved 250+ problems with strong command on Competitive Programming.
           </p>
         </div>
+        </a>
       </div>
 
       <div id="experience" className={homcss.testimonials_wrapper}>

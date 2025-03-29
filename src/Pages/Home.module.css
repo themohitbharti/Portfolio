@@ -350,15 +350,19 @@
 @media screen and (max-width:1400px){
     .about_wrapper{
         flex-direction: column;
+        align-items: center;
     }
 
     .about_wrapper .about_content{
         width: 100%;
     }
 
-    .about_wrapper .experience_cards{
-        width: 60%;
-    }
+    .about_wrapper .experience_cards {
+        width: 100%;
+        max-width: 800px; /* Prevent cards from becoming too wide */
+        margin: 0 auto; /* Center the container */
+        padding: 0 5%; /* Add breathing room */
+      }
 }
 
 .about_wrapper .about_content .about_cards {
@@ -562,6 +566,7 @@
     border-radius: 100px;
     transition: .6s;
     border: 1px solid transparent;
+    cursor: pointer;
 }
 
 .expertise_wrapper .expertise_card:hover{
