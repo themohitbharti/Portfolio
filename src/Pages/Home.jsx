@@ -213,7 +213,7 @@ export default function Home() {
 
           <span>1506 Rating</span>
           <p>
-            Solved 450+ problems with strong focus on Data Structures &
+            Solved 100+ problems with strong focus on Data Structures &
             Algorithms.
           </p>
         </div>
@@ -232,7 +232,7 @@ export default function Home() {
 
           <span>1634 Rating</span>
           <p>
-            Achieved a 3-star rating with a total of more than 450+ problems
+            Achieved a 3-star rating with a total of more than 250+ problems
             solved.
           </p>
         </div>

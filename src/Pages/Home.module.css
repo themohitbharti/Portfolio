@@ -1097,6 +1097,10 @@
         width: 100%;
         margin-top: 50px;
     }
+
+    .contact_wrapper .contact_content{
+        display: none;
+    }
 }
 
 
