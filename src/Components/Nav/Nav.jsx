@@ -10,6 +10,16 @@ export default function Nav(){
         menu.current.classList.toggle(navcss.showMenu)
     }
 
+    const scrollToSection = (id) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    };
+
     return (
         <nav>
             <div className={navcss.logo}>
@@ -18,19 +28,19 @@ export default function Nav(){
 
             <ul ref={menu}>
                 <li>
-                    <a href="#">Home</a>
+                    <a href="#home" onClick={() => scrollToSection('home')}>Home</a>
                 </li>
                 <li>
-                    <a href="#">Domains</a>
+                    <a href="#domains" onClick={() => scrollToSection('domains')}>Domains</a>
                 </li>
                 <li>
-                    <a href="#">Expirience</a>
+                    <a href="#experience" onClick={() => scrollToSection('experience')}>Experience</a>
                 </li>
                 <li>
-                    <a href="#">Projects</a>
+                    <a href="#projects" onClick={() => scrollToSection('projects')}>Projects</a>
                 </li>
                 <li>
-                    <a href="#">Contact</a>
+                    <a href="#contact" onClick={() => scrollToSection('contact')}>Contact</a>
                 </li>
             </ul>
 

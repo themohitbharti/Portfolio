@@ -1,19 +1,13 @@
 import React from "react";
 import homcss from "./Home.module.css";
 import heroImage from "../assets/new_profile.jpg";
-import portfolioImg01 from "../assets/tab-image-1.png";
-import portfolioImg02 from "../assets/tab-image-2.png";
-import portfolioImg03 from "../assets/tab-image-3.png";
-import portfolioImg04 from "../assets/tab-image-4.png";
-import portfolioImg05 from "../assets/tab-image-5.png";
-import portfolioImg06 from "../assets/tab-image-6.png";
 import companyImgs01 from "../assets/go_comet_logo.jpeg";
 import companyImgs02 from "../assets/pc.jpeg";
 import companyImgs03 from "../assets/brl.jpeg";
-import galleryImg01 from "../assets/gallery-image-01.jpg";
-import galleryImg02 from "../assets/gallery-image-02.jpg";
-import galleryImg03 from "../assets/gallery-image-03.jpg";
-import galleryImg04 from "../assets/gallery-image-04.jpg";
+import projectImg01 from '../assets/BidSpace.jpeg';
+import projectImg02 from '../assets/BlogVault.jpeg';
+import projectImg03 from '../assets/Hive.jpeg';
+import projectImg04 from '../assets/StockPilot.jpeg';
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
@@ -43,7 +37,7 @@ export default function Home() {
       };
   return (
     <div className={homcss.container}>
-      <div className={homcss.home_wrapper}>
+      <div id="home" className={homcss.home_wrapper}>
         <div className={homcss.home_content}>
           <small>Web Developer</small>
           <h2>
@@ -80,7 +74,7 @@ export default function Home() {
         UIs.
       </p>
 
-      <div className={homcss.about_wrapper}>
+      <div id="domains" className={homcss.about_wrapper}>
         <div className={homcss.experience_cards}>
           <div className={homcss.card}>
             <h2>3+</h2>
@@ -89,8 +83,8 @@ export default function Home() {
 
           <div className={homcss.card}>
             <i className="ri-lock-line"></i>
-            <h3>Projects Delivered</h3>
-            <p>260+ projects</p>
+            <h3>Projects Made</h3>
+            <p>26+ projects</p>
           </div>
         </div>
 
@@ -132,10 +126,15 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <button>
-            Read More
-            <i className="ri-arrow-right-line"></i>
-          </button>
+          <a 
+    href="https://www.linkedin.com/in/themohitbharti/" 
+    target="_blank"
+    rel="noopener noreferrer"
+    className={homcss.githubButton}
+  >
+    Visit Linkedin
+    <i className="ri-linkedin-fill"></i>
+  </a>
         </div>
       </div>
 
@@ -264,7 +263,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className={homcss.testimonials_wrapper}>
+      <div id="experience" className={homcss.testimonials_wrapper}>
         <small>My Professional Journey</small>
         <h2>Building Scalable Solutions</h2>
         <p>
@@ -404,13 +403,13 @@ export default function Home() {
         </div>
       </div>
 
-      <div className={homcss.gallery_wrapper}>
+      <div id="projects" className={homcss.gallery_wrapper}>
         <small>My Projects</small>
         <h2>Transforming Ideas into Exceptionals</h2>
 
         <div className={homcss.gallery_cards}>
           <div className={homcss.gallery_card}>
-            <img src={galleryImg01} alt="galleryImg01" />
+            <img src={projectImg01} alt="projectImg01" />
 
             <div className={homcss.gallery_content}>
               <h3>BidSpace</h3>
@@ -418,14 +417,19 @@ export default function Home() {
                 <span>Node.js</span>
                 <span>TypeScript</span>
               </div>
-              <button>
-                View Project <i className="ri-arrow-right-line"></i>
-              </button>
+              <a
+          href="https://github.com/themohitbharti/bidspace"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={homcss.repo_button}
+        >
+          View Repository <i className="ri-github-fill"></i>
+        </a>
             </div>
           </div>
 
           <div className={homcss.gallery_card}>
-            <img src={galleryImg02} alt="galleryImg02" />
+            <img src={projectImg02} alt="projectImg02" />
 
             <div className={homcss.gallery_content}>
               <h3>BlogVault</h3>
@@ -433,14 +437,19 @@ export default function Home() {
                 <span>React</span>
                 <span>Appwrite</span>
               </div>
-              <button>
-                View Project <i className="ri-arrow-right-line"></i>
-              </button>
+              <a
+          href="https://github.com/themohitbharti/BlogVault"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={homcss.repo_button}
+        >
+          View Repository <i className="ri-github-fill"></i>
+        </a>
             </div>
           </div>
 
           <div className={homcss.gallery_card}>
-            <img src={galleryImg03} alt="galleryImg03" />
+            <img src={projectImg03} alt="projectImg03" />
 
             <div className={homcss.gallery_content}>
               <h3>Hive</h3>
@@ -448,14 +457,19 @@ export default function Home() {
                 <span>Node.js</span>
                 <span>Flutter</span>
               </div>
-              <button>
-                View Project <i className="ri-arrow-right-line"></i>
-              </button>
+              <a
+          href="https://github.com/themohitbharti/Hive_backend"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={homcss.repo_button}
+        >
+          View Repository <i className="ri-github-fill"></i>
+        </a>
             </div>
           </div>
 
           <div className={homcss.gallery_card}>
-            <img src={galleryImg04} alt="galleryImg04" />
+            <img src={projectImg04} alt="projectImg04" />
 
             <div className={homcss.gallery_content}>
               <h3>StockPilot</h3>
@@ -463,17 +477,20 @@ export default function Home() {
                 <span>Node.js</span>
                 <span>Postgres</span>
               </div>
-              <button>
-                View Project <i className="ri-arrow-right-line"></i>
-              </button>
+              <a
+          href="https://github.com/themohitbharti/stockPilot"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={homcss.repo_button}
+        >
+          View Repository <i className="ri-github-fill"></i>
+        </a>
             </div>
           </div>
         </div>
       </div>
 
-      
-
-      <div className={homcss.contact_wrapper}>
+      <div id="contact" className={homcss.contact_wrapper}>
         <div className={homcss.contact_content}>
           <h2>Get ready to Create Great</h2>
 
