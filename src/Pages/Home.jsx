@@ -13,20 +13,22 @@ import "swiper/css";
 import { Autoplay } from "swiper/modules";
 
 export default function Home() {
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        const formData = new FormData(e.target);
-        const data = Object.fromEntries(formData);
-      
-        const emailBody = `
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData);
+
+    const emailBody = `
       Name: ${data.name}
-      Phone: ${data.phone || 'Not provided'}
+      Phone: ${data.phone || "Not provided"}
       Message: 
       ${data.message}
-        `.trim()
-      
-        window.location.href = `mailto:mohitbharti373@gmail.com?subject=Portfolio%20Contact&body=${encodeURIComponent(emailBody)}`;
-      };
+        `.trim();
+
+    window.location.href = `mailto:mohitbharti373@gmail.com?subject=Portfolio%20Contact&body=${encodeURIComponent(
+      emailBody
+    )}`;
+  };
   return (
     <div className={homcss.container}>
       <div id="home" className={homcss.home_wrapper}>
@@ -479,6 +481,17 @@ export default function Home() {
               </a>
             </div>
           </div>
+        </div>
+
+        <div className={homcss.github_section}>
+          <a
+            href="https://github.com/themohitbharti"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={homcss.github_button}
+          >
+            Visit GitHub <i className="ri-github-fill"></i>
+          </a>
         </div>
       </div>
 

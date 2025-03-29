@@ -773,7 +773,7 @@
 
 .gallery_wrapper .gallery_cards .gallery_card{
     width: 100%;
-    height: 620px;
+    /* height: 620px; */
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -880,6 +880,38 @@
     font-size: 18px;
   }
 
+  .github_section {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+  }
+  
+  .github_button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 28px;
+    background-color: #333;
+    color: white;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+    border: 1px solid #333;
+  }
+  
+  .github_button:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+  }
+  
+  .github_button i {
+    font-size: 18px;
+  }
+
+  
+
 @media screen and (max-width:900px){
     .gallery_wrapper .gallery_cards{
         grid-template-columns: repeat(1,1fr);
@@ -890,6 +922,59 @@
         font-size: 14px;
       }
 }
+
+@media (max-width: 768px) {
+    .github_section {
+      margin-top: 40px;
+    }
+    
+    .github_button {
+      padding: 10px 24px;
+      font-size: 14px;
+    }
+  }
+
+  @media screen and (max-width: 550px) {
+    
+  .gallery_content div{
+    display: none;
+  }
+    
+  }
+
+  @media screen and (max-width: 550px) {
+    .gallery_card {
+      padding: 20px !important;
+      min-height: auto !important;
+      height: auto !important;
+    }
+  
+    .gallery_content {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 15px !important;
+      min-height: 200px;
+    }
+  
+    .gallery_content > div {
+      display: grid !important;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px !important;
+    }
+  
+    .gallery_content > div span {
+      width: 100% !important;
+      text-align: center;
+      margin: 0 !important;
+      padding: 8px !important;
+    }
+  
+    .repo_button {
+      margin-top: auto !important;
+      width: 100% !important;
+      position: static !important;
+    }
+  }
 
 .contact_wrapper{
     display: flex;
