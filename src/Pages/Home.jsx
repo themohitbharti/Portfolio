@@ -13,27 +13,20 @@ import "swiper/css";
 import { Autoplay } from "swiper/modules";
 
 export default function Home() {
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-
-    try {
-      const response = await fetch(import.meta.env.VITE_GOOGLE_SCRIPT_URL, {
-        method: "POST",
-        body: JSON.stringify(Object.fromEntries(formData)),
-        headers: { "Content-Type": "application/json" },
-      });
-
-      const result = await response.json();
-      if (result.success) {
-        alert("Message sent successfully!");
-      } else {
-        throw new Error(result.error);
-      }
-    } catch (error) {
-      alert(`Error: ${error.message}`);
-    }
-  };
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const data = Object.fromEntries(formData);
+      
+        const emailBody = `
+      Name: ${data.name}
+      Phone: ${data.phone || 'Not provided'}
+      Message: 
+      ${data.message}
+        `.trim()
+      
+        window.location.href = `mailto:mohitbharti373@gmail.com?subject=Portfolio%20Contact&body=${encodeURIComponent(emailBody)}`;
+      };
   return (
     <div className={homcss.container}>
       <div id="home" className={homcss.home_wrapper}>
