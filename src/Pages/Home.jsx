@@ -4,37 +4,36 @@ import heroImage from "../assets/new_profile.jpg";
 import companyImgs01 from "../assets/go_comet_logo.jpeg";
 import companyImgs02 from "../assets/pc.jpeg";
 import companyImgs03 from "../assets/brl.jpeg";
-import projectImg01 from '../assets/BidSpace.jpeg';
-import projectImg02 from '../assets/BlogVault.jpeg';
-import projectImg03 from '../assets/Hive.jpeg';
-import projectImg04 from '../assets/StockPilot.jpeg';
+import projectImg01 from "../assets/BidSpace.jpeg";
+import projectImg02 from "../assets/BlogVault.jpeg";
+import projectImg03 from "../assets/Hive.jpeg";
+import projectImg04 from "../assets/StockPilot.jpeg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
 
 export default function Home() {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        const formData = new FormData(e.target);
-      
-        try {
-          const response = await fetch(import.meta.env.VITE_GOOGLE_SCRIPT_URL, {
-            method: "POST",
-            body: JSON.stringify(Object.fromEntries(formData)),
-            headers: { "Content-Type": "application/json" }
-          });
-      
-          const result = await response.json();
-          if (result.success) {
-            alert("Message sent successfully!");
-          } else {
-            throw new Error(result.error);
-          }
-        } catch (error) {
-          alert(`Error: ${error.message}`);
-        }
-      };
+    try {
+      const response = await fetch(import.meta.env.VITE_GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        body: JSON.stringify(Object.fromEntries(formData)),
+        headers: { "Content-Type": "application/json" },
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        alert("Message sent successfully!");
+      } else {
+        throw new Error(result.error);
+      }
+    } catch (error) {
+      alert(`Error: ${error.message}`);
+    }
+  };
   return (
     <div className={homcss.container}>
       <div id="home" className={homcss.home_wrapper}>
@@ -49,13 +48,13 @@ export default function Home() {
             sometimes—when the stars align—bug-free code.
           </p>
 
-          <a 
-    href="/resume.pdf" 
-    download="Mohit_Bharti_Resume.pdf"
-    className={homcss.resumeButton}
-  >
-    Download Resume <i className="ri-download-line"></i>
-  </a>
+          <a
+            href="/resume.pdf"
+            download="Mohit_Bharti_Resume.pdf"
+            className={homcss.resumeButton}
+          >
+            Download Resume <i className="ri-download-line"></i>
+          </a>
         </div>
 
         <div className={homcss.home_image}>
@@ -126,15 +125,15 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <a 
-    href="https://www.linkedin.com/in/themohitbharti/" 
-    target="_blank"
-    rel="noopener noreferrer"
-    className={homcss.githubButton}
-  >
-    Visit Linkedin
-    <i className="ri-linkedin-fill"></i>
-  </a>
+          <a
+            href="https://www.linkedin.com/in/themohitbharti/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={homcss.githubButton}
+          >
+            Visit Linkedin
+            <i className="ri-linkedin-fill"></i>
+          </a>
         </div>
       </div>
 
@@ -239,7 +238,7 @@ export default function Home() {
 
           <span>1634 Rating</span>
           <p>
-            Achieved a 3-star rating with total of more than 450+ problems
+            Achieved a 3-star rating with a total of more than 450+ problems
             solved.
           </p>
         </div>
@@ -418,13 +417,13 @@ export default function Home() {
                 <span>TypeScript</span>
               </div>
               <a
-          href="https://github.com/themohitbharti/bidspace"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={homcss.repo_button}
-        >
-          View Repository <i className="ri-github-fill"></i>
-        </a>
+                href="https://github.com/themohitbharti/bidspace"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={homcss.repo_button}
+              >
+                View Repository <i className="ri-github-fill"></i>
+              </a>
             </div>
           </div>
 
@@ -438,13 +437,13 @@ export default function Home() {
                 <span>Appwrite</span>
               </div>
               <a
-          href="https://github.com/themohitbharti/BlogVault"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={homcss.repo_button}
-        >
-          View Repository <i className="ri-github-fill"></i>
-        </a>
+                href="https://github.com/themohitbharti/BlogVault"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={homcss.repo_button}
+              >
+                View Repository <i className="ri-github-fill"></i>
+              </a>
             </div>
           </div>
 
@@ -458,13 +457,13 @@ export default function Home() {
                 <span>Flutter</span>
               </div>
               <a
-          href="https://github.com/themohitbharti/Hive_backend"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={homcss.repo_button}
-        >
-          View Repository <i className="ri-github-fill"></i>
-        </a>
+                href="https://github.com/themohitbharti/Hive_backend"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={homcss.repo_button}
+              >
+                View Repository <i className="ri-github-fill"></i>
+              </a>
             </div>
           </div>
 
@@ -478,13 +477,13 @@ export default function Home() {
                 <span>Postgres</span>
               </div>
               <a
-          href="https://github.com/themohitbharti/stockPilot"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={homcss.repo_button}
-        >
-          View Repository <i className="ri-github-fill"></i>
-        </a>
+                href="https://github.com/themohitbharti/stockPilot"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={homcss.repo_button}
+              >
+                View Repository <i className="ri-github-fill"></i>
+              </a>
             </div>
           </div>
         </div>
@@ -504,7 +503,7 @@ export default function Home() {
             <div className={homcss.contact_info}>
               <i className="ri-map-pin-line"></i>
               <p>
-                City <span>Ghaziabad,UP,India</span>
+                City <span>Ghaziabad, UP, India</span>
               </p>
             </div>
             <div className={homcss.contact_info}>
@@ -515,88 +514,133 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <form 
-  className={homcss.contact_form} 
-  onSubmit={handleSubmit}
->
-  <h2>Get in Touch</h2>
+        <form className={homcss.contact_form} onSubmit={handleSubmit}>
+          <h2>Get in Touch</h2>
 
-  <div className={homcss.input_wrapper}>
-    <input 
-      type="text" 
-      name="name" 
-      placeholder="Your Name" 
-      required 
-    />
-    <input 
-      type="tel" 
-      name="phone" 
-      placeholder="Your Phone" 
-    />
-  </div>
+          <div className={homcss.input_wrapper}>
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="tel" name="phone" placeholder="Your Phone" />
+          </div>
 
-  <div className={homcss.input_wrapper}>
-    <input 
-      type="email" 
-      name="email" 
-      placeholder="Your Email" 
-      required 
-    />
-    <input 
-      type="text" 
-      name="subject" 
-      placeholder="Subject" 
-    />
-  </div>
+          <div className={homcss.input_wrapper}>
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              required
+            />
+            <input type="text" name="subject" placeholder="Subject" />
+          </div>
 
-  <textarea 
-    name="message" 
-    placeholder="Your Message" 
-    required 
-    minLength={10}
-  ></textarea>
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            required
+            minLength={10}
+          ></textarea>
 
-  <button type="submit">
-    Send Message <i className="ri-send-plane-line"></i>
-  </button>
-</form>
+          <button type="submit">
+            Send Message <i className="ri-send-plane-line"></i>
+          </button>
+        </form>
       </div>
 
       <div className={homcss.footer_wrapper}>
-      <div className={homcss.footer_links}>
-  <div className={homcss.logo}>
-    <span>Mohit</span>
-  </div>
-  <p>Full-stack developer | Competitive programmer | Problem solver</p>
-  <div className={homcss.socials}>
-    <a href="https://www.linkedin.com/in/themohitbharti" target="_blank" rel="noopener noreferrer">
-      <i className="ri-linkedin-line"></i>
-    </a>
-    <a href="https://github.com/themohitbharti" target="_blank" rel="noopener noreferrer">
-      <i className="ri-github-line"></i>
-    </a>
-    <a href="https://twitter.com/themohitbharti" target="_blank" rel="noopener noreferrer">
-      <i className="ri-twitter-x-line"></i>
-    </a>
-  </div>
-</div>
         <div className={homcss.footer_links}>
-          <h3>Quick Links</h3>
-
+          <div className={homcss.logo}>
+            <span>Mohit</span>
+          </div>
+          <p>Full-stack developer | Competitive programmer | Problem solver</p>
+          <div className={homcss.socials}>
+            <a
+              href="https://www.linkedin.com/in/themohitbharti"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="ri-linkedin-line"></i>
+            </a>
+            <a
+              href="https://github.com/themohitbharti"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="ri-github-line"></i>
+            </a>
+            <a
+              href="https://twitter.com/themohitbharti"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="ri-twitter-x-line"></i>
+            </a>
+          </div>
+        </div>
+        <div className={homcss.footer_links}>
+          <h3>Navigate</h3>
           <p>
-            <a href="#">About Me</a>
+            <a
+              href="#home"
+              onClick={(e) => {
+                e.preventDefault();
+                document
+                  .getElementById("home")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              Home
+            </a>
           </p>
           <p>
-            <a href="#">Service</a>
+            <a
+              href="#domains"
+              onClick={(e) => {
+                e.preventDefault();
+                document
+                  .getElementById("domains")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              Domains
+            </a>
           </p>
           <p>
-            <a href="#">Contact Me</a>
+            <a
+              href="#experience"
+              onClick={(e) => {
+                e.preventDefault();
+                document
+                  .getElementById("experience")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              Experience
+            </a>
           </p>
           <p>
-            <a href="#">blog post</a>
+            <a
+              href="#projects"
+              onClick={(e) => {
+                e.preventDefault();
+                document
+                  .getElementById("projects")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              Projects
+            </a>
           </p>
           <p>
-            <a href="#">pricing</a>
+            <a
+              href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                document
+                  .getElementById("contact")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              Contact
+            </a>
           </p>
         </div>
 
@@ -607,7 +651,7 @@ export default function Home() {
             <i className="ri-phone-line"></i>+91 9520608608
           </p>
           <p>
-            <i className="ri-map-pin-line"></i>Deoband,Saharanpur,UP
+            <i className="ri-map-pin-line"></i>Ghaziabad, UP, India
           </p>
           <p>
             <i className="ri-mail-line"></i>mohitbharti373@gmail.com

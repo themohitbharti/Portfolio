@@ -47,6 +47,10 @@
     width: 60%;
 }
 
+.home_wrapper .home_content p{
+    font-size: 18px;
+}
+
 .home_wrapper .home_content h2 span{
     font-weight: 800;
 }
@@ -97,7 +101,6 @@
 }
 
 .home_content .resumeButton {
-    /* Inherit all your existing button styles */
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -110,7 +113,6 @@
     transition: all 0.3s;
     border: 1px solid var(--primary-color);
     cursor: pointer;
-    /* Add any other existing button styles here */
   }
   
   .home_content .resumeButton:hover {
@@ -592,18 +594,6 @@
     text-decoration: none;
   }
 
-/* .expertise_wrapper .expertise_card span{
-    height: 70px;
-    width: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #fdc4481f;
-    border-radius: 50%;
-    border: 1px solid var(--primary-color);
-    color: var(--primary-color);
-} */
-
 .expertise_wrapper .expertise_card span {
     height: 70px;
     width: 70px;
@@ -625,7 +615,7 @@
 .expertise_wrapper .expertise_card p {
     color: rgba(131, 131, 131, 0.8);
     transition: color 0.3s;
-    font-size: 15px;
+    font-size: 18px;
     line-height: 1.6;
   }
 
@@ -1048,9 +1038,6 @@
 .footer_wrapper .footer_links a:hover{
     color: var(--primary-color);
 }
-
-
-/* //////Newsletter */
 
 .footer_wrapper .footer_links .socials{
     display: flex;

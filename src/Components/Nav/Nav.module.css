@@ -85,6 +85,26 @@ nav .navBtns i:hover{
     display: none;
 }
 
+nav ul li.navItem a {
+    font-size: 18px;
+    padding: 8px 12px;
+    position: relative;
+  }
+  
+  nav ul li.navItem a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s;
+  }
+  
+  nav ul li.navItem a:hover::after {
+    width: 100%;
+  }
 
 @media screen and (max-width:900px) {
     .bars{
@@ -115,4 +135,14 @@ nav .navBtns i:hover{
     nav .showMenu{
         left: 0;
     }
+
+    nav ul li.navItem {
+        margin: 0;
+        padding: 25px 0;
+      }
+      
+      nav ul li.navItem a {
+        font-size: 20px;
+        padding-left: 12%;
+      }
 }
