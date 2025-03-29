@@ -137,8 +137,13 @@
 
 @media screen and (max-width:1400px){
     .home_wrapper .home_image img{
-        width: 80%;
-        height: 80%;
+        width: 60%;
+        height: 60%;
+    }
+    
+    .home_wrapper .home_image span {
+        width: 380px;
+    height: 380px;
     }
 }
 
@@ -153,8 +158,8 @@
     }
 
     .home_wrapper .home_image span{
-        width: 480px;
-        height: 480px;
+        width: 340px;
+    height: 340px;
     }
 }
 
@@ -174,8 +179,8 @@
     }
 
     .home_wrapper .home_image span{
-        height: 640px;
-        width: 640px;
+        width: 450px;
+    height: 450px;
     }
 }
 
