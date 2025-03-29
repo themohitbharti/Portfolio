@@ -21,13 +21,13 @@ export default function Nav(){
                     <a href="#">Home</a>
                 </li>
                 <li>
-                    <a href="#">About</a>
+                    <a href="#">Domains</a>
                 </li>
                 <li>
-                    <a href="#">Services</a>
+                    <a href="#">Expirience</a>
                 </li>
                 <li>
-                    <a href="#">Portfolio</a>
+                    <a href="#">Projects</a>
                 </li>
                 <li>
                     <a href="#">Contact</a>
@@ -35,12 +35,17 @@ export default function Nav(){
             </ul>
 
             <div className={navcss.navBtns}>
-                <div className={navcss.social}>
-                <i className='ri-facebook-line'></i>
-                <i className='ri-instagram-line'></i>
-                <i className='ri-twitter-x-line'></i>
-                <i className='ri-youtube-line'></i>
-                </div>
+            <div className={navcss.social}>
+  <a href="https://www.linkedin.com/in/themohitbharti" target="_blank" rel="noopener noreferrer">
+    <i className='ri-linkedin-line'></i>
+  </a>
+  <a href="https://github.com/themohitbharti" target="_blank" rel="noopener noreferrer">
+    <i className='ri-github-line'></i>
+  </a>
+  <a href="https://twitter.com/themohitbharti" target="_blank" rel="noopener noreferrer">
+    <i className='ri-twitter-x-line'></i>
+  </a>
+</div>
 
                 <div className={navcss.bars} onClick={menuHandler}>
                    <i className='ri-menu-line'></i>

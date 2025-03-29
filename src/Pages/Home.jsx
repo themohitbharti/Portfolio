@@ -7,17 +7,40 @@ import portfolioImg03 from "../assets/tab-image-3.png";
 import portfolioImg04 from "../assets/tab-image-4.png";
 import portfolioImg05 from "../assets/tab-image-5.png";
 import portfolioImg06 from "../assets/tab-image-6.png";
-import testimonialImg01 from "../assets/rev1.png"
-import testimonialImg02 from "../assets/client-img-1.jpg"
-import galleryImg01 from '../assets/gallery-image-01.jpg'
-import galleryImg02 from '../assets/gallery-image-02.jpg'
-import galleryImg03 from '../assets/gallery-image-03.jpg'
-import galleryImg04 from '../assets/gallery-image-04.jpg'
-import {Swiper ,SwiperSlide} from "swiper/react";
-import 'swiper/css';
-import {Autoplay} from 'swiper/modules'
+import companyImgs01 from "../assets/go_comet_logo.jpeg";
+import companyImgs02 from "../assets/pc.jpeg";
+import companyImgs03 from "../assets/brl.jpeg";
+import galleryImg01 from "../assets/gallery-image-01.jpg";
+import galleryImg02 from "../assets/gallery-image-02.jpg";
+import galleryImg03 from "../assets/gallery-image-03.jpg";
+import galleryImg04 from "../assets/gallery-image-04.jpg";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import { Autoplay } from "swiper/modules";
 
 export default function Home() {
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+      
+        try {
+          const response = await fetch(import.meta.env.VITE_GOOGLE_SCRIPT_URL, {
+            method: "POST",
+            body: JSON.stringify(Object.fromEntries(formData)),
+            headers: { "Content-Type": "application/json" }
+          });
+      
+          const result = await response.json();
+          if (result.success) {
+            alert("Message sent successfully!");
+          } else {
+            throw new Error(result.error);
+          }
+        } catch (error) {
+          alert(`Error: ${error.message}`);
+        }
+      };
   return (
     <div className={homcss.container}>
       <div className={homcss.home_wrapper}>
@@ -27,14 +50,18 @@ export default function Home() {
             Mohit <span>Bharti</span>
           </h2>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat
-            vitae inventore fugiat provident. Debitis optio atque voluptatibus
-            asperiores.
+            A <span>full-stack developer</span> who speaks JavaScript, C++, and
+            occasional dad jokes. I build robust backends, intuitive UIs, and
+            sometimes—when the stars align—bug-free code.
           </p>
 
-          <button>
-            View Portfolio <i className="ri-arrow-right-line"></i>
-          </button>
+          <a 
+    href="/resume.pdf" 
+    download="Mohit_Bharti_Resume.pdf"
+    className={homcss.resumeButton}
+  >
+    Download Resume <i className="ri-download-line"></i>
+  </a>
         </div>
 
         <div className={homcss.home_image}>
@@ -45,52 +72,63 @@ export default function Home() {
       </div>
 
       <p className={homcss.portfolioText}>
-        A Personal <span>Portfolio</span> is a Collection of your work. Lorem
-        ipsum dolor sit amet consectetur adipisicing elit. Odio, ea! from{" "}
-        <span>2008</span> Lorem ipsum dolor sit amet consectetur adipisicing
-        elit. Quos dicta dolore tenetur ea, quaerat velit.
+        A <span>Full-Stack Developer</span> specializing in Node.js and
+        React.js. I build scalable web applications with clean architecture and
+        efficient algorithms. Passionate about{" "}
+        <span>competitive programming</span> with 500+ problems solved across
+        LeetCode and CodeForces. My work bridges robust backends with intuitive
+        UIs.
       </p>
 
       <div className={homcss.about_wrapper}>
         <div className={homcss.experience_cards}>
           <div className={homcss.card}>
             <h2>3+</h2>
-            <h3>Years of Experience</h3>
+            <h3>Years of Code</h3>
           </div>
 
           <div className={homcss.card}>
             <i className="ri-lock-line"></i>
-            <h3>UI/UX Designs</h3>
+            <h3>Projects Delivered</h3>
             <p>260+ projects</p>
           </div>
         </div>
 
         <div className={homcss.about_content}>
-          <small>About Us</small>
-          <h2>Boost Business Strategic Solutions</h2>
+          <small>My Expertise</small>
+          <h2>Full-Stack Development & Problem Solving</h2>
 
           <div className={homcss.about_cards}>
             <div className={homcss.about_card}>
               <div>
                 <i className="ri-instance-line"></i>
-                <h3>Business Solutions</h3>
+                <h3>Backend Development</h3>
               </div>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
-                maiores dolore eos repellat non impedit possimus tenetur
-                distinctio necessitatibus amet.
+                Scalable server-side solutions with Node.js, databases, and
+                APIs. Focus on performance, security, and clean architecture.
               </p>
             </div>
 
             <div className={homcss.about_card}>
               <div>
                 <i className="ri-trophy-line"></i>
-                <h3>Profit Partners</h3>
+                <h3>Frontend Development</h3>
               </div>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
-                maiores dolore eos repellat non impedit possimus tenetur
-                distinctio necessitatibus amet.
+                Interactive UIs with React.js, responsive designs, and state
+                management. Bridging aesthetics with functionality.
+              </p>
+            </div>
+
+            <div className={homcss.about_card}>
+              <div>
+                <i className="ri-cpu-line"></i> {/* Represents algorithms */}
+                <h3>Competitive Programming</h3>
+              </div>
+              <p>
+                Efficient problem-solving in C++ with DSA expertise. Optimized
+                algorithms for high-performance computing.
               </p>
             </div>
           </div>
@@ -101,7 +139,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className={homcss.portfolio_wrapper}>
+      {/* <div className={homcss.portfolio_wrapper}>
         <small>Latest Portfolio</small>
         <h2>Transforming Ideas into Exceptional</h2>
         <p>
@@ -163,83 +201,196 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className={homcss.expertise_wrapper}>
-        <small>My Expertise</small>
-        <h2>Elevated Designs Personalised the Best Experiences</h2>
+        <small>My Coding Profiles</small>
+        <h2>Competitive Programming & Problem Solving</h2>
 
         <div className={homcss.expertise_card}>
-            <div className={homcss.expertise_card_title}>
-                <i className="ri-globe-line"></i>
-                <h3>UI/Visual Designs</h3>
-            </div>
+          <div className={homcss.expertise_card_title}>
+            <i className="ri-code-s-slash-line"></i>
+            <a
+              href="https://leetcode.com/themohitbharti"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <h3>LeetCode</h3>
+            </a>
+          </div>
 
-            <span>50%</span>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut animi quos perspiciatis </p>
+          <span>1506 Rating</span>
+          <p>
+            Solved 450+ problems with strong focus on Data Structures &
+            Algorithms.
+          </p>
         </div>
 
         <div className={homcss.expertise_card}>
-            <div className={homcss.expertise_card_title}>
-                <i className="ri-pie-chart-box-line"></i>
-                <h3>Branding Designs</h3>
-            </div>
+          <div className={homcss.expertise_card_title}>
+            <i className="ri-medal-line"></i>
+            <a
+              href="https://www.codechef.com/users/themohitbharti"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <h3>CodeChef</h3>
+            </a>
+          </div>
 
-            <span>60%</span>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut animi quos exercitationem.</p>
+          <span>1634 Rating</span>
+          <p>
+            Achieved a 3-star rating with total of more than 450+ problems
+            solved.
+          </p>
         </div>
 
         <div className={homcss.expertise_card}>
-            <div className={homcss.expertise_card_title}>
-                <i className="ri-stack-line"></i>
-                <h3>Motion Designs</h3>
-            </div>
+          <div className={homcss.expertise_card_title}>
+            <i className="ri-cpu-line"></i>
+            <a
+              href="https://codeforces.com/profile/themohitbharti"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <h3>CodeForces</h3>
+            </a>
+          </div>
 
-            <span>90%</span>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut animi quos perspiciatis aut?</p>
+          <span>1158 Rating</span>
+          <p>
+            Solved 250+ problems with strong command on Competitive Programming.
+          </p>
         </div>
       </div>
 
       <div className={homcss.testimonials_wrapper}>
-            <small>What are my Experiences</small>
-            <h2>Brigning dreams to life</h2>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non, impedit eos quaerat necessitatibus in rerum.</p>
+        <small>My Professional Journey</small>
+        <h2>Building Scalable Solutions</h2>
+        <p>
+          Hands-on experience developing robust systems and leading technical
+          initiatives
+        </p>
 
-            <div className={homcss.swiper_wrapper}>
-            <Swiper
+        <div className={homcss.swiper_wrapper}>
+          <Swiper
             slidesPerView={3}
             spaceBetween={30}
-            loop={true} 
+            loop={true}
             autoplay={{
-                delay:2500,
+              delay: 2500,
             }}
             modules={[Autoplay]}
-
             breakpoints={{
-                0:{
-                    slidesPerView:1,
-                },
-                768:{
-                    slidesPerView:2,
-                },
-                1200:{
-                    slidesPerView:3,
-                },
-                
+              0: {
+                slidesPerView: 1,
+              },
+              768: {
+                slidesPerView: 2,
+              },
+              1200: {
+                slidesPerView: 3,
+              },
             }}
-            >
-                <SwiperSlide>
-                    <div className={homcss.testimonials_card}>
-                        <div className={homcss.profile_testimonial}>
-                            <img src={testimonialImg01} alt="testimonialImg01" />
-                            <h3>GoComet <span>Backend Developer</span></h3>
-                        </div>
+          >
+            <SwiperSlide>
+              <div className={homcss.testimonials_card}>
+                <div className={homcss.profile_testimonial}>
+                  <img src={companyImgs01} alt="companyImg01" />
+                  <h3>
+                    GoComet <span>Backend Developer Intern</span>
+                  </h3>
+                </div>
 
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut ab quaerat sed expedita nemo numquam nam autem perspiciatis dicta deserunt cumque exercitationem delectus, sequi vero nesciunt eveniet illum! Dicta, rerum.</p>
-                    </div>
-                </SwiperSlide>
+                <p>
+                  <ul>
+                    <li>
+                      * Built carrier integrations (FedEx/Maersk) using Ruby for
+                      real-time shipment tracking
+                    </li>
+                    <li>
+                      * Developed structured web scrapers and API orchestrators
+                      for 99.8% data reliability
+                    </li>
+                    <li>
+                      * Standardized ETL processes improving data accuracy by
+                      30%
+                    </li>
+                    <li>
+                      * Reduced manual tracking efforts by 60% through automated
+                      workflows
+                    </li>
+                    <li>
+                      * Implemented AWS Lambda/SNS for real-time supply chain
+                      alerts
+                    </li>
+                  </ul>
+                </p>
+              </div>
+            </SwiperSlide>
 
-                <SwiperSlide>
+            <SwiperSlide>
+              <div className={homcss.testimonials_card}>
+                <div className={homcss.profile_testimonial}>
+                  <img src={companyImgs02} alt="companyImg02" />
+                  <h3>
+                    Programming Club,AKGEC <span>Head</span>
+                  </h3>
+                </div>
+
+                <p>
+                  <ul className={homcss.experience_list}>
+                    <li>
+                      * Lead the programming club to promote competitive
+                      programming in our college
+                    </li>
+                    <li>* Conducted multiple coding workshops in college</li>
+                    <li>
+                      * Organized coding contests "CodeCrunch" for 600+
+                      participants
+                    </li>
+                    <li>* Solved 500+ problems on LeetCode/CodeForces</li>
+                    <li>* Coordinated Code Crunch college coding event</li>
+                  </ul>
+                </p>
+              </div>
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <div className={homcss.testimonials_card}>
+                <div className={homcss.profile_testimonial}>
+                  <img src={companyImgs03} alt="companyImg01" />
+                  <h3>
+                    Blockchain Research lab,AKGEC <span>Backend Developer</span>
+                  </h3>
+                </div>
+
+                <p>
+                  <ul>
+                    <li>
+                      * Created Node.js visitor management portal with 90%
+                      efficiency gain
+                    </li>
+                    <li>
+                      * Organized BlockVerse coding event for 150+ participants
+                    </li>
+                    <li>
+                      * Optimized admission portal reducing processing time by
+                      60%
+                    </li>
+                    <li>
+                      * Implemented JWT authentication for 5000+ annual
+                      applicants
+                    </li>
+                    <li>
+                      * Enhanced MongoDB queries improving response times by 35%
+                    </li>
+                  </ul>
+                </p>
+              </div>
+            </SwiperSlide>
+
+            {/* <SwiperSlide>
                     <div className={homcss.testimonials_card}>
                         <div className={homcss.profile_testimonial}>
                             <img src={testimonialImg02} alt="testimonialImg02" />
@@ -248,33 +399,9 @@ export default function Home() {
 
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut ab quaerat sed expedita nemo numquam nam autem perspiciatis dicta deserunt cumque exercitationem delectus, sequi vero nesciunt eveniet illum! Dicta, rerum.</p>
                     </div>
-                </SwiperSlide>
-
-                <SwiperSlide>
-                    <div className={homcss.testimonials_card}>
-                        <div className={homcss.profile_testimonial}>
-                            <img src={testimonialImg01} alt="testimonialImg01" />
-                            <h3>GoComet <span>Backend Developer</span></h3>
-                        </div>
-
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut ab quaerat sed expedita nemo numquam nam autem perspiciatis dicta deserunt cumque exercitationem delectus, sequi vero nesciunt eveniet illum! Dicta, rerum.</p>
-                    </div>
-                </SwiperSlide>
-
-                <SwiperSlide>
-                    <div className={homcss.testimonials_card}>
-                        <div className={homcss.profile_testimonial}>
-                            <img src={testimonialImg02} alt="testimonialImg02" />
-                            <h3>Programming Club <span>Head</span></h3>
-                        </div>
-
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut ab quaerat sed expedita nemo numquam nam autem perspiciatis dicta deserunt cumque exercitationem delectus, sequi vero nesciunt eveniet illum! Dicta, rerum.</p>
-                    </div>
-                </SwiperSlide>
-            </Swiper>
-            </div>
-
-
+                </SwiperSlide> */}
+          </Swiper>
+        </div>
       </div>
 
       <div className={homcss.gallery_wrapper}>
@@ -282,126 +409,192 @@ export default function Home() {
         <h2>Transforming Ideas into Exceptionals</h2>
 
         <div className={homcss.gallery_cards}>
-            <div className={homcss.gallery_card}>
-                <img src={galleryImg01} alt="galleryImg01" />
+          <div className={homcss.gallery_card}>
+            <img src={galleryImg01} alt="galleryImg01" />
 
-                <div className={homcss.gallery_content}>
-                    <h3>BidSpace</h3>
-                    <div>
-                        <span>Node.js</span>
-                        <span>TypeScript</span>
-                    </div>
-                    <button>View Project <i className="ri-arrow-right-line"></i></button>
-                </div>
+            <div className={homcss.gallery_content}>
+              <h3>BidSpace</h3>
+              <div>
+                <span>Node.js</span>
+                <span>TypeScript</span>
+              </div>
+              <button>
+                View Project <i className="ri-arrow-right-line"></i>
+              </button>
             </div>
+          </div>
 
-            <div className={homcss.gallery_card}>
-                <img src={galleryImg02} alt="galleryImg02" />
+          <div className={homcss.gallery_card}>
+            <img src={galleryImg02} alt="galleryImg02" />
 
-                <div className={homcss.gallery_content}>
-                    <h3>BlogVault</h3>
-                    <div>
-                        <span>React</span>
-                        <span>Appwrite</span>
-                    </div>
-                    <button>View Project <i className="ri-arrow-right-line"></i></button>
-                </div>
+            <div className={homcss.gallery_content}>
+              <h3>BlogVault</h3>
+              <div>
+                <span>React</span>
+                <span>Appwrite</span>
+              </div>
+              <button>
+                View Project <i className="ri-arrow-right-line"></i>
+              </button>
             </div>
+          </div>
 
-            <div className={homcss.gallery_card}>
-                <img src={galleryImg03} alt="galleryImg03" />
+          <div className={homcss.gallery_card}>
+            <img src={galleryImg03} alt="galleryImg03" />
 
-                <div className={homcss.gallery_content}>
-                    <h3>Hive</h3>
-                    <div>
-                        <span>Node.js</span>
-                        <span>Flutter</span>
-                    </div>
-                    <button>View Project <i className="ri-arrow-right-line"></i></button>
-                </div>
+            <div className={homcss.gallery_content}>
+              <h3>Hive</h3>
+              <div>
+                <span>Node.js</span>
+                <span>Flutter</span>
+              </div>
+              <button>
+                View Project <i className="ri-arrow-right-line"></i>
+              </button>
             </div>
+          </div>
 
-            <div className={homcss.gallery_card}>
-                <img src={galleryImg04} alt="galleryImg04" />
+          <div className={homcss.gallery_card}>
+            <img src={galleryImg04} alt="galleryImg04" />
 
-                <div className={homcss.gallery_content}>
-                    <h3>StockPilot</h3>
-                    <div>
-                        <span>Node.js</span>
-                        <span>Postgres</span>
-                    </div>
-                    <button>View Project <i className="ri-arrow-right-line"></i></button>
-                </div>
+            <div className={homcss.gallery_content}>
+              <h3>StockPilot</h3>
+              <div>
+                <span>Node.js</span>
+                <span>Postgres</span>
+              </div>
+              <button>
+                View Project <i className="ri-arrow-right-line"></i>
+              </button>
             </div>
+          </div>
         </div>
       </div>
+
+      
 
       <div className={homcss.contact_wrapper}>
         <div className={homcss.contact_content}>
-            <h2>Get ready to Create Great</h2>
+          <h2>Get ready to Create Great</h2>
 
-            <div className={homcss.details}>
-                <div className={homcss.contact_info}>
-                    <i className="ri-mail-line"></i>
-                    <p>E-mail <span>mohitbharti373@gmail.com</span></p>
-                </div>
-                <div className={homcss.contact_info}>
-                    <i className="ri-map-pin-line"></i>
-                    <p>City <span>Deoband,Saharanpur,UP</span></p>
-                </div>
-                <div className={homcss.contact_info}>
-                    <i className="ri-phone-line"></i>
-                    <p>Contact <span>+91 9520608608</span></p>
-                </div>
+          <div className={homcss.details}>
+            <div className={homcss.contact_info}>
+              <i className="ri-mail-line"></i>
+              <p>
+                E-mail <span>mohitbharti373@gmail.com</span>
+              </p>
             </div>
+            <div className={homcss.contact_info}>
+              <i className="ri-map-pin-line"></i>
+              <p>
+                City <span>Ghaziabad,UP,India</span>
+              </p>
+            </div>
+            <div className={homcss.contact_info}>
+              <i className="ri-phone-line"></i>
+              <p>
+                Contact <span>+91 9520608608</span>
+              </p>
+            </div>
+          </div>
         </div>
-        <div className={homcss.contact_form}>
-            <h2>Get in Touch</h2>
+        <form 
+  className={homcss.contact_form} 
+  onSubmit={handleSubmit}
+>
+  <h2>Get in Touch</h2>
 
-            <div className={homcss.input_wrapper}>
-                <input type="text" placeholder="Your Name"/>
-                <input type="text" placeholder="Your Phone"/>
-            </div>
-            <div className={homcss.input_wrapper}>
-                <input type="text" placeholder="Your Email"/>
-                <input type="text" placeholder="Subject"/>
-            </div>
+  <div className={homcss.input_wrapper}>
+    <input 
+      type="text" 
+      name="name" 
+      placeholder="Your Name" 
+      required 
+    />
+    <input 
+      type="tel" 
+      name="phone" 
+      placeholder="Your Phone" 
+    />
+  </div>
 
-            <textarea placeholder="Message :"></textarea>
+  <div className={homcss.input_wrapper}>
+    <input 
+      type="email" 
+      name="email" 
+      placeholder="Your Email" 
+      required 
+    />
+    <input 
+      type="text" 
+      name="subject" 
+      placeholder="Subject" 
+    />
+  </div>
 
-            <button>Appointment Now <i className="ri-arrow-right-line"></i></button>
-        </div>
+  <textarea 
+    name="message" 
+    placeholder="Your Message" 
+    required 
+    minLength={10}
+  ></textarea>
+
+  <button type="submit">
+    Send Message <i className="ri-send-plane-line"></i>
+  </button>
+</form>
       </div>
 
       <div className={homcss.footer_wrapper}>
+      <div className={homcss.footer_links}>
+  <div className={homcss.logo}>
+    <span>Mohit</span>
+  </div>
+  <p>Full-stack developer | Competitive programmer | Problem solver</p>
+  <div className={homcss.socials}>
+    <a href="https://www.linkedin.com/in/themohitbharti" target="_blank" rel="noopener noreferrer">
+      <i className="ri-linkedin-line"></i>
+    </a>
+    <a href="https://github.com/themohitbharti" target="_blank" rel="noopener noreferrer">
+      <i className="ri-github-line"></i>
+    </a>
+    <a href="https://twitter.com/themohitbharti" target="_blank" rel="noopener noreferrer">
+      <i className="ri-twitter-x-line"></i>
+    </a>
+  </div>
+</div>
         <div className={homcss.footer_links}>
-            <div className={homcss.logo}>
-                <span>Mohit</span>
-            </div>
-            <p>Lorem, ipsum dolor  necessitatibus eius atque tenetur?</p>
-            <div className={homcss.socials}>
-                <i className="ri-facebook-line"></i>
-                <i className="ri-instagram-line"></i>
-                <i className="ri-twitter-x-line"></i>
-                <i className="ri-youtube-line"></i>
-            </div>
+          <h3>Quick Links</h3>
+
+          <p>
+            <a href="#">About Me</a>
+          </p>
+          <p>
+            <a href="#">Service</a>
+          </p>
+          <p>
+            <a href="#">Contact Me</a>
+          </p>
+          <p>
+            <a href="#">blog post</a>
+          </p>
+          <p>
+            <a href="#">pricing</a>
+          </p>
         </div>
-        <div className={homcss.footer_links}>
-            <h3>Quick Links</h3>
-
-            <p><a href="#">About Me</a></p>
-            <p><a href="#">Service</a></p>
-            <p><a href="#">Contact Me</a></p>
-            <p><a href="#">blog post</a></p>
-            <p><a href="#">pricing</a></p>
-        </div>
 
         <div className={homcss.footer_links}>
-            <h3>Contact</h3>
+          <h3>Contact</h3>
 
-            <p><i className="ri-phone-line"></i>+91 9520608608</p>
-            <p><i className="ri-map-pin-line"></i>Deoband,Saharanpur,UP</p>
-            <p><i className="ri-mail-line"></i>mohitbharti373@gmail.com</p>
+          <p>
+            <i className="ri-phone-line"></i>+91 9520608608
+          </p>
+          <p>
+            <i className="ri-map-pin-line"></i>Deoband,Saharanpur,UP
+          </p>
+          <p>
+            <i className="ri-mail-line"></i>mohitbharti373@gmail.com
+          </p>
         </div>
       </div>
     </div>

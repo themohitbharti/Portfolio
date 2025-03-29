@@ -45,6 +45,20 @@ nav .navBtns .social{
     gap: 10px;
 }
 
+nav .navBtns .social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    background-color: #0d0d0d;
+    border-radius: 50%;
+    transition: .6s;
+    border: 1px solid var(--primary-color);
+    color: #0d0d0d;
+    text-decoration: none;
+}
+
 nav .navBtns i{
     height: 40px;
     width: 40px;
