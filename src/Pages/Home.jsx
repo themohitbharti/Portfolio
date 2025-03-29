@@ -1,6 +1,6 @@
 import React from "react";
 import homcss from "./Home.module.css";
-import heroImage from "../assets/new_profile.jpg";
+import heroImage from "../assets/hero_Img_comp.jpeg";
 import companyImgs01 from "../assets/go_comet_logo.jpeg";
 import companyImgs02 from "../assets/pc.jpeg";
 import companyImgs03 from "../assets/brl.jpeg";
