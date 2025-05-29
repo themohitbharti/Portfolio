@@ -44,7 +44,7 @@ export default function Home() {
           </p>
 
           <a
-            href="https://drive.google.com/file/d/1C8B0pmoy6ead_J3AAfWWI9I_oFgT2o5n/view?usp=sharing"
+            href="https://drive.google.com/file/d/11bnEKEEj9Prsqv8qiiddact7SSuiDxGE/view?usp=sharing"
             download="Mohit_Bharti_Resume.pdf"
             className={homcss.resumeButton}
           >
