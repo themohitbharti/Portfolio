@@ -7,10 +7,10 @@ import companyImgs03 from "../assets/brl.jpeg";
 import projectImg01 from "../assets/BidSpace.jpeg";
 import projectImg02 from "../assets/BlogVault.jpeg";
 import projectImg03 from "../assets/Hive.jpeg";
-import projectImg04 from "../assets/StockPilot.jpeg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
+import JobLensLogo from "../Components/Logo/JobLens";
 
 export default function Home() {
   const handleSubmit = (e) => {
@@ -44,7 +44,7 @@ export default function Home() {
           </p>
 
           <a
-            href="https://drive.google.com/file/d/11bnEKEEj9Prsqv8qiiddact7SSuiDxGE/view?usp=sharing"
+            href="https://drive.google.com/file/d/10OOl9xSwqjG8bmc-9KHjg8cHmwucxiSK/view?usp=sharing"
             download="Mohit_Bharti_Resume.pdf"
             className={homcss.resumeButton}
           >
@@ -201,59 +201,60 @@ export default function Home() {
         <h2>Competitive Programming & Problem Solving</h2>
 
         <a
-              href="https://leetcode.com/themohitbharti"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-        <div className={homcss.expertise_card}>
-          <div className={homcss.expertise_card_title}>
-            <i className="ri-code-s-slash-line"></i>
+          href="https://leetcode.com/themohitbharti"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className={homcss.expertise_card}>
+            <div className={homcss.expertise_card_title}>
+              <i className="ri-code-s-slash-line"></i>
               <h3>LeetCode</h3>
-          </div>
+            </div>
 
-          <span>1506 Rating</span>
-          <p>
-            Solved 100+ problems with strong focus on Data Structures &
-            Algorithms.
-          </p>
-        </div>
+            <span>1506 Rating</span>
+            <p>
+              Solved 100+ problems with strong focus on Data Structures &
+              Algorithms.
+            </p>
+          </div>
         </a>
 
         <a
-              href="https://www.codechef.com/users/themohitbharti"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-        <div className={homcss.expertise_card}>
-          <div className={homcss.expertise_card_title}>
-            <i className="ri-medal-line"></i>
+          href="https://www.codechef.com/users/themohitbharti"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className={homcss.expertise_card}>
+            <div className={homcss.expertise_card_title}>
+              <i className="ri-medal-line"></i>
               <h3>CodeChef</h3>
-          </div>
+            </div>
 
-          <span>1634 Rating</span>
-          <p>
-            Achieved a 3-star rating with a total of more than 250+ problems
-            solved.
-          </p>
-        </div>
+            <span>1634 Rating</span>
+            <p>
+              Achieved a 3-star rating with a total of more than 250+ problems
+              solved.
+            </p>
+          </div>
         </a>
 
         <a
-              href="https://codeforces.com/profile/themohitbharti"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-        <div className={homcss.expertise_card}>
-          <div className={homcss.expertise_card_title}>
-            <i className="ri-cpu-line"></i>
+          href="https://codeforces.com/profile/themohitbharti"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className={homcss.expertise_card}>
+            <div className={homcss.expertise_card_title}>
+              <i className="ri-cpu-line"></i>
               <h3>CodeForces</h3>
-          </div>
+            </div>
 
-          <span>1158 Rating</span>
-          <p>
-            Solved 250+ problems with strong command on Competitive Programming.
-          </p>
-        </div>
+            <span>1158 Rating</span>
+            <p>
+              Solved 250+ problems with strong command on Competitive
+              Programming.
+            </p>
+          </div>
         </a>
       </div>
 
@@ -402,7 +403,57 @@ export default function Home() {
         <h2>Transforming Ideas into Exceptionals</h2>
 
         <div className={homcss.gallery_cards}>
-          <div className={homcss.gallery_card}>
+          {/* JobLens card */}
+          <div
+            className={homcss.gallery_card}
+            onClick={() =>
+              window.open("https://job-lens.vercel.app", "_blank", "noopener")
+            }
+            style={{ cursor: "pointer" }}
+          >
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                padding: "1rem",
+                /* ensure the logo block occupies same vertical space as image cards */
+                minHeight: "470px",
+              }}
+            >
+              <JobLensLogo size="large" />
+            </div>
+
+            <div className={homcss.gallery_content}>
+              <h3>JobLens</h3>
+              <div>
+                <span>React</span>
+                <span>Node.js</span>
+              </div>
+              <a
+                href="https://github.com/themohitbharti/JobLens"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={homcss.repo_button}
+                onClick={(e) => e.stopPropagation()}
+              >
+                View Repository <i className="ri-github-fill"></i>
+              </a>
+            </div>
+          </div>
+
+          {/* BidSpace card */}
+          <div
+            className={homcss.gallery_card}
+            onClick={() =>
+              window.open(
+                "https://bidspace-v1.vercel.app",
+                "_blank",
+                "noopener"
+              )
+            }
+            style={{ cursor: "pointer" }}
+          >
             <img src={projectImg01} alt="projectImg01" />
 
             <div className={homcss.gallery_content}>
@@ -416,13 +467,25 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={homcss.repo_button}
+                onClick={(e) => e.stopPropagation()}
               >
                 View Repository <i className="ri-github-fill"></i>
               </a>
             </div>
           </div>
 
-          <div className={homcss.gallery_card}>
+          {/* BlogVault card */}
+          <div
+            className={homcss.gallery_card}
+            onClick={() =>
+              window.open(
+                "https://blogvault-v1.vercel.app",
+                "_blank",
+                "noopener"
+              )
+            }
+            style={{ cursor: "pointer" }}
+          >
             <img src={projectImg02} alt="projectImg02" />
 
             <div className={homcss.gallery_content}>
@@ -436,13 +499,25 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={homcss.repo_button}
+                onClick={(e) => e.stopPropagation()}
               >
                 View Repository <i className="ri-github-fill"></i>
               </a>
             </div>
           </div>
 
-          <div className={homcss.gallery_card}>
+          {/* Hive card */}
+          <div
+            className={homcss.gallery_card}
+            onClick={() =>
+              window.open(
+                "https://drive.google.com/file/d/1G0UPm2TXJhNxwHFAYuVc7_wtIjP2iFwQ/view?usp=drive_link",
+                "_blank",
+                "noopener"
+              )
+            }
+            style={{ cursor: "pointer" }}
+          >
             <img src={projectImg03} alt="projectImg03" />
 
             <div className={homcss.gallery_content}>
@@ -456,26 +531,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={homcss.repo_button}
-              >
-                View Repository <i className="ri-github-fill"></i>
-              </a>
-            </div>
-          </div>
-
-          <div className={homcss.gallery_card}>
-            <img src={projectImg04} alt="projectImg04" />
-
-            <div className={homcss.gallery_content}>
-              <h3>StockPilot</h3>
-              <div>
-                <span>Node.js</span>
-                <span>Postgres</span>
-              </div>
-              <a
-                href="https://github.com/themohitbharti/stockPilot"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={homcss.repo_button}
+                onClick={(e) => e.stopPropagation()}
               >
                 View Repository <i className="ri-github-fill"></i>
               </a>
